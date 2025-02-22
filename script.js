@@ -19,11 +19,14 @@ function generatePassword () {
         // Math.random() gera o número aleatório, e *chars.length faz com que o número 
         // esteja dentro do índice válido da string de caracteres 'chars'
         // substring() é utilizado para pegar uma parte da string a partir do índice 'randomNumber'
-    }
 
+        const InputEl = document.querySelector('#password');
+        InputEl.value = password
+    }
+console.log(password);
 }
 
 // Chama a função para gerar a senha
  generatePassword();
 
-console.log(password);
+
