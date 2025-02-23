@@ -39,7 +39,8 @@ main{
 
 .password{
   display: flex;
-
+  align-items: center;
+  padding: 1rem 1.5rem;
   .text{
     flex: 1;
   }
@@ -57,6 +58,14 @@ main{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.actions button {
+  margin-left: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
 }
 

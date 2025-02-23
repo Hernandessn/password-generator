@@ -1,5 +1,5 @@
 const InputEl = document.querySelector("#password");
-const copyButtonEl = document.querySelector('#copy');
+
 
 // biome-ignore lint/style/useConst: <explanation>
 let passwordLength = 16;
@@ -40,6 +40,8 @@ passwordLengthEl.addEventListener("input", () => {
 // Gera a senha novamente com o novo comprimento
 generatePassword(); 
 });
-copyButtonEl.addEventListener('click', Copy)
+document.querySelector('#copy-one').addEventListener('click', Copy);
+document.querySelector('#copy-two').addEventListener('click', Copy);
+
 // Chama a função para gerar a senha inicial
 generatePassword();
