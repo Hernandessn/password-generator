@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f8fafd;
+    font-family: 'Inter',sans-serif;
+    color: #252525;
+    padding: 2rem;
+}
+main{
+    max-width: 780px;
+    margin: 0 auto;
+
+}
+.hero {
+  text-align: center;
+  padding-bottom: 3rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 1.5rem;
+  }
+  p {
+    font-size: 1.125rem;
+    color: #828282;
+  }
+}
