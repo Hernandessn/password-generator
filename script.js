@@ -1,3 +1,6 @@
+const InputEl = document.querySelector("#password");
+const copyButtonEl = document.querySelector('#copy');
+
 // biome-ignore lint/style/useConst: <explanation>
 let passwordLength = 16;
 
@@ -20,19 +23,23 @@ function generatePassword() {
 	}
 
 	// Atualiza o valor do input apenas uma vez, após a senha ser gerada
-	const InputEl = document.querySelector("#password");
+	
 	InputEl.value = password;
+}
 
-	console.log(password);
+function Copy(){
+	navigator.clipboard.writeText(InputEl.value);
 }
 
 // Configura o event listener para o input de comprimento da senha
 const passwordLengthEl = document.querySelector("#password-length");
+
 passwordLengthEl.addEventListener("input", () => {
     passwordLength = Number.parseInt(passwordLengthEl.value);
-	console.log(passwordLength);
-    generatePassword(); // Gera a senha novamente com o novo comprimento
+	
+// Gera a senha novamente com o novo comprimento
+generatePassword(); 
 });
-
+copyButtonEl.addEventListener('click', Copy)
 // Chama a função para gerar a senha inicial
 generatePassword();
