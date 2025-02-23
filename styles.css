@@ -1,50 +1,55 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: #f8fafd;
-    font-family: 'Inter',sans-serif;
-    color: #252525;
-    padding: 2rem;
+body {
+  background-color: #f8fafd;
+  font-family: 'Inter', sans-serif;
+  color: #252525;
+  padding: 2rem;
 }
-main{
-    max-width: 780px;
-    margin: 0 auto;
 
+main {
+  max-width: 780px;
+  margin: 0 auto;
 }
+
 .hero {
   text-align: center;
   padding-bottom: 3rem;
+}
 
-  h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    padding-bottom: 1.5rem;
-  }
-  p {
-    font-size: 1.125rem;
-    color: #828282;
-  }
+.hero h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: #828282;
 }
 
 .box {
   background-color: #fff;
-  box-shadow: 0 1px 2px rgba(132,148,165,0.1);
+  box-shadow: 0 1px 2px rgba(132, 148, 165, 0.1);
   border-radius: 8px;
   margin-bottom: 3rem;
 }
 
-.password{
+.password {
   display: flex;
   align-items: center;
   padding: 1rem 1.5rem;
-  .text{
-    flex: 1;
-  }
-.text input{
+}
+
+.password .text {
+  flex: 1;
+}
+
+.password .text input {
   font-family: 'Inconsolata', sans-serif;
   font-weight: 600;
   font-size: 2.5rem;
@@ -60,12 +65,47 @@ main{
   user-select: none;
 }
 
-.actions button {
+.password .actions button {
   margin-left: 1rem;
   background-color: transparent;
   border: none;
   cursor: pointer;
   transition: opacity 0.2s;
 }
+
+.security-indicator {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
+.security-indicator-bar {
+  height: 10px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transition: all 0.2s;
+}
+
+.bar {
+  width: 100%; /* Adicione isso para garantir que a barra ocupe espaço */
+  height: 100%; /* Adicione isso para garantir que a barra ocupe espaço */
+}
+
+.bar.completed {
+  border-top-right-radius: 0;
+}
+
+.bar.critical {
+  background-color: #eb5757;
+}
+
+.bar.warning {
+  background-color: #f2c94c;
+}
+
+.bar.safe {
+  background-color: #27ae60;
+}
