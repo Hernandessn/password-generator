@@ -4,6 +4,7 @@ const upperCaseCheckEl = document.querySelector("#uppercase-check");
 const numberCheckEl = document.querySelector("#numbers-check");
 const symbolCheckEl = document.querySelector("#symbol-check");
 
+
 // biome-ignore lint/style/useConst: <explanation>
 let passwordLength = 16;
 
@@ -50,11 +51,11 @@ function Copy(){
 }
 
 // Configura o event listener para o input de comprimento da senha
-const passwordLengthEl = document.querySelector("#password-length");
-
+const passwordLengthEl = document.querySelector
+("#password-length");
 passwordLengthEl.addEventListener("input", () => {
-    passwordLength = Number.parseInt(passwordLengthEl.value);
-	
+passwordLength = Number.parseInt(passwordLengthEl.value);
+document.querySelector("#password-length-text").innerText = passwordLength
 // Gera a senha novamente com o novo comprimento
 generatePassword(); 
 });
