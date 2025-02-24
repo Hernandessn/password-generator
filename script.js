@@ -1,14 +1,32 @@
 const InputEl = document.querySelector("#password");
 
+const upperCaseCheckEl = document.querySelector("#uppercase-check");
+const numberCheckEl = document.querySelector("#numbers-check");
+const symbolCheckEl = document.querySelector("#symbol-check");
 
 // biome-ignore lint/style/useConst: <explanation>
 let passwordLength = 16;
 
 function generatePassword() {
 	// Definindo os caracteres possíveis para a senha
-	const chars =
-		"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789?!@&*()[]";
+	// biome-ignore lint/style/useConst: <explanation>
+	let chars =
+	"abcdefghijklmnopqrstuvwxyz";
 
+	const upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	const numberChars = "123456789"
+	const symbolChars = "?!@&*()[]"
+
+	if(upperCaseCheckEl.checked){
+	chars += upperCaseChars
+
+	} else if(numberCheckEl.checked){
+		chars += numberChars
+
+	} else if(symbolCheckEl.checked){
+		chars += symbolChars
+	}
+	
 	// "let" é utilizado aqui porque a senha será construída ao longo do loop
 	let password = "";
 
@@ -40,6 +58,11 @@ passwordLengthEl.addEventListener("input", () => {
 // Gera a senha novamente com o novo comprimento
 generatePassword(); 
 });
+upperCaseCheckEl.addEventListener('click', generatePassword);
+numberCheckEl.addEventListener('click', generatePassword);
+symbolCheckEl.addEventListener('click', generatePassword);
+
+
 document.querySelector('#copy-one').addEventListener('click', Copy);
 document.querySelector('#copy-two').addEventListener('click', Copy);
 
