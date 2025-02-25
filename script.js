@@ -4,68 +4,60 @@ const upperCaseCheckEl = document.querySelector("#uppercase-check");
 const numberCheckEl = document.querySelector("#numbers-check");
 const symbolCheckEl = document.querySelector("#symbol-check");
 
+const securityIndicatorBarEl = document.querySelector("#security-indicator-bar");
 
-// biome-ignore lint/style/useConst: <explanation>
 let passwordLength = 16;
 
 function generatePassword() {
-	// Definindo os caracteres possíveis para a senha
-	// biome-ignore lint/style/useConst: <explanation>
-	let chars =
-	"abcdefghijklmnopqrstuvwxyz";
+    let chars = "abcdefghijklmnopqrstuvwxyz";
 
-	const upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	const numberChars = "123456789"
-	const symbolChars = "?!@&*()[]"
+    const upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numberChars = "123456789";
+    const symbolChars = "?!@&*()[]";
 
-	if(upperCaseCheckEl.checked){
-	chars += upperCaseChars
+    if (upperCaseCheckEl.checked) {
+        chars += upperCaseChars;
+    }
+    if (numberCheckEl.checked) {
+        chars += numberChars;
+    }
+    if (symbolCheckEl.checked) {
+        chars += symbolChars;
+    }
 
-	} else if(numberCheckEl.checked){
-		chars += numberChars
+    let password = "";
 
-	} else if(symbolCheckEl.checked){
-		chars += symbolChars
-	}
-	
-	// "let" é utilizado aqui porque a senha será construída ao longo do loop
-	let password = "";
+    for (let i = 0; i < passwordLength; i++) {
+        const randomNumber = Math.floor(Math.random() * chars.length);
+        password += chars.substring(randomNumber, randomNumber + 1);
+    }
 
-	// Laço de repetição para gerar uma senha de 8 caracteres
-	for (let i = 0; i < passwordLength; i++) {
-		// Gera um número aleatório entre 0 e o tamanho da string 'chars'
-		const randomNumber = Math.floor(Math.random() * chars.length);
-
-		// Cria um recorte da string 'chars' para pegar um caractere aleatório
-		// O 'randomNumber' determina o ponto inicial e o 'randomNumber + 1' pega um único caractere
-		password += chars.substring(randomNumber, randomNumber + 1);
-	}
-
-	// Atualiza o valor do input apenas uma vez, após a senha ser gerada
-	
-	InputEl.value = password;
+    InputEl.value = password;
+    calculateQuality();
 }
 
-function Copy(){
-	navigator.clipboard.writeText(InputEl.value);
+function calculateQuality() {
+    const percent = Math.round((passwordLength / 64) * 100);
+    console.log(percent);
+    securityIndicatorBarEl.style.width = `${percent}%`;
 }
 
-// Configura o event listener para o input de comprimento da senha
-const passwordLengthEl = document.querySelector
-("#password-length");
+function Copy() {
+    navigator.clipboard.writeText(InputEl.value);
+}
+
+const passwordLengthEl = document.querySelector("#password-length");
 passwordLengthEl.addEventListener("input", () => {
-passwordLength = Number.parseInt(passwordLengthEl.value);
-document.querySelector("#password-length-text").innerText = passwordLength
-// Gera a senha novamente com o novo comprimento
-generatePassword(); 
+    passwordLength = Number.parseInt(passwordLengthEl.value);
+    document.querySelector("#password-length-text").innerText = passwordLength;
+    generatePassword();
 });
+
 upperCaseCheckEl.addEventListener('click', generatePassword);
 numberCheckEl.addEventListener('click', generatePassword);
 symbolCheckEl.addEventListener('click', generatePassword);
 
-
 document.querySelector('#copy-one').addEventListener('click', Copy);
 document.querySelector('#copy-two').addEventListener('click', Copy);
 
-// Chama a função para gerar a senha inicial
 generatePassword();
