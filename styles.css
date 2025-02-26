@@ -48,6 +48,17 @@ main {
 .password .text {
   flex: 1;
 }
+.password .text input.font-sm{
+ font-size: 2rem;
+}
+
+.password .text input.font-xs{
+  font-size: 1.5rem;
+ }
+
+ .password .text input.font-xxs{
+  font-size: 1rem;
+ }
 
 .password .text input {
   font-family: 'Inconsolata', sans-serif;

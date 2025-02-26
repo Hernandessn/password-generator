@@ -23,7 +23,9 @@ function generatePassword() {
     }
 
     InputEl.value = password;
+
     calculateQuality();
+    calculateFontSize();
 }
 
 function calculateQuality() {
@@ -48,6 +50,26 @@ function calculateQuality() {
         securityIndicatorBarEl.classList.add('critical');
         securityIndicatorBarEl.classList.remove('warning');
         securityIndicatorBarEl.classList.remove('safe');
+    }
+}
+
+function calculateFontSize(){
+    if(passwordLength > 45){
+        InputEl.classList.remove('font-sm');
+        InputEl.classList.remove('font-xs');
+        InputEl.classList.add('font-xxs');
+    }else if(passwordLength > 32){
+        InputEl.classList.remove('font-sm');
+        InputEl.classList.add('font-xs');
+        InputEl.classList.remove('font-xxs');
+    }else if(passwordLength > 22){
+        InputEl.classList.add('font-sm');
+        InputEl.classList.remove('font-xs');
+        InputEl.classList.remove('font-xxs');
+    }else{
+        InputEl.classList.remove('font-sm');
+        InputEl.classList.remove('font-xs');
+        InputEl.classList.remove('font-xxs');
     }
 }
 
