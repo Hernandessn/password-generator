@@ -77,6 +77,10 @@ function copyPassword() {
     navigator.clipboard.writeText(InputEl.value);
 }
 
+function RenewPassword(){
+    generatePassword()
+}
+
 const passwordLengthEl = document.querySelector("#password-length");
 passwordLengthEl.addEventListener("input", () => {
     passwordLength = Number.parseInt(passwordLengthEl.value);
@@ -90,5 +94,8 @@ symbolCheckEl.addEventListener('click', generatePassword);
 
 document.querySelector('#copy-one').addEventListener('click', copyPassword);
 document.querySelector('#copy-two').addEventListener('click', copyPassword);
+
+document.querySelector("#renew").addEventListener('click', RenewPassword);
+
 
 generatePassword();
