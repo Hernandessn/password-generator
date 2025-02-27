@@ -3,6 +3,7 @@ const upperCaseCheckEl = document.querySelector("#uppercase-check");
 const numberCheckEl = document.querySelector("#numbers-check");
 const symbolCheckEl = document.querySelector("#symbol-check");
 const securityIndicatorBarEl = document.querySelector("#security-indicator-bar");
+const buttonCopy = document.querySelector("#copy-two");
 
 let passwordLength = 16;
 
@@ -42,14 +43,26 @@ function calculateQuality() {
         securityIndicatorBarEl.classList.remove('critical');
         securityIndicatorBarEl.classList.remove('warning');
         securityIndicatorBarEl.classList.add('safe');
+
+        buttonCopy.classList.remove('critical');
+        buttonCopy.classList.remove('warning');
+        buttonCopy.classList.add('safe');
     } else if (percent > 50) {
         securityIndicatorBarEl.classList.remove('critical');
         securityIndicatorBarEl.classList.add('warning');
         securityIndicatorBarEl.classList.remove('safe');
+
+        buttonCopy.classList.remove('critical');
+        buttonCopy.classList.add('warning');
+        buttonCopy.classList.remove('safe');
     } else {
         securityIndicatorBarEl.classList.add('critical');
         securityIndicatorBarEl.classList.remove('warning');
         securityIndicatorBarEl.classList.remove('safe');
+
+        buttonCopy.classList.add('critical');
+        buttonCopy.classList.remove('warning');
+        buttonCopy.classList.remove('safe');
     }
 }
 
