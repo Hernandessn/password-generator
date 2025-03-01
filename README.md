@@ -1,3 +1,6 @@
+<img src="https://github.com/Hernandessn/password-generator/blob/main/img/screenshots/desktop-view.png?raw=true" alt="imagens do projeto"/>
+<img src="https://github.com/Hernandessn/password-generator/blob/main/img/screenshots/desktop2-view.png?raw=true" alt="imagens do projeto"/>
+<img src="https://github.com/Hernandessn/password-generator/blob/main/img/screenshots/mobile-view.png?raw=true" alt="imagens do projeto"/>
 
 
 
@@ -38,13 +41,13 @@ Este projeto é um gerador de senhas seguro e personalizável, desenvolvido com 
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/seu-usuario/gerador-de-senhas.git
+   git clone https://github.com/Hernandessn/password-generator.git
    ```
 
 2. **Navegue até a pasta do projeto:**
 
    ```bash
-   cd gerador-de-senhas
+   cd password-generator
    ```
 
 3. **Abra o arquivo `index.html` no seu navegador:**
@@ -56,7 +59,7 @@ Este projeto é um gerador de senhas seguro e personalizável, desenvolvido com 
 ## 📂 Estrutura do Projeto
 
 ```
-gerador-de-senhas/
+password-generator/
 ├── index.html       # Página principal
 ├── styles.css       # Arquivo de estilos
 ├── script.js        # Lógica JavaScript para geração de senhas e interações
