@@ -1,4 +1,8 @@
+# Screenshots 📸
+
+
 <img src="https://github.com/Hernandessn/password-generator/blob/main/img/screenshots/desktop-view.png?raw=true" alt="imagens do projeto"/>
+<img src="https://github.com/Hernandessn/password-generator/blob/main/img/screenshots/desktop3-view.png?raw=true" alt="imagens do projeto"/>
 <img src="https://github.com/Hernandessn/password-generator/blob/main/img/screenshots/desktop2-view.png?raw=true" alt="imagens do projeto"/>
 <img src="https://github.com/Hernandessn/password-generator/blob/main/img/screenshots/mobile-view.png?raw=true" alt="imagens do projeto"/>
 
